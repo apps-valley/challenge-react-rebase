@@ -1,27 +1,25 @@
-# Engineering React Rebase Challenge
+# Engineering React Rebase Challenge solutions
 
-You will be expected to be able to contribute features and fixes without causing conflicts and other version control headaches. An important tool for keeping codebases clean is `git rebase`. This challenge will test your understanding of a basic codebase and your ability to use `git rebase` properly.
+The a couple of rebase should be done and git conflict should be resolved in the second rebasing.
 
-## The Challenge
+## The steps
 
-There are two pull requests open on this repo. Each change is in its own branch. The challenge is to use `git rebase` to add both changes to `main`. When you are finished, your `main` branch should have three commits in the following order:
 
 ```
-* feat: add Biology Today article
-* feat: add Auto Review article
-* fiat lux
+git fetch : All branchs of the origin are downloaded in local.
+git checkout autoReview : autoReview branch will be created based on origin autoReview
+git fetch
+git checkout biologyToday
+
+git rebase biologyToday : It will be done successfully without any errors.
+git rebase autoReview : It will have the merge conflicted 2 files(App.js and App.test.js) and it should be resolved.
+                        I have done it by VScode editor.
+git rebase --continue : It will make a commit with the last commit name of autoReview
 ```
 
-_Any errors, missing features, missing tests, or failing tests will disqualify the solution._
-
-## Instructions
-
-How to attempt this challenge:
-
-1) Clone this repo locally
-2) Solve the challenge locally
-3) Create a new repo in your GitHub account and note the git url
-4) Set your local origin to the new git url: `git remote set-url origin ${git url}`
-5) Push your solution to the newly set origin
-
-You must follow these steps for your solution to be accepted -- **forks or other methods will not be considered.**
+## The results
+```
+feat: add Biology Today article
+feat: add Auto Review article
+fiat lux
+```
